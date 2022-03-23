@@ -70,7 +70,7 @@ programa
 		  leia(opcaoMenuPrincipal)
 		  escolha(opcaoMenuPrincipal){
 		  	caso 1: 
-		  		//Jogos-Douglas
+		  	jogos()
 		  	pare
 		  	caso 2:
   	  		consoles()
@@ -103,6 +103,62 @@ programa
 			escreva("Por favor escolha uma opção válida: \n")
 			menuPrincipal()
 		
+	}
+	funcao jogos(){
+		
+	inteiro opcao3
+	cadeia nomeJogos[5]={"Fifa22","Desert Strike","Minecraft","Pac-Man","Pokemon Legends Arceus"}
+	inteiro quantidadeJogos[5]={9, 1, 5, 2, 9}
+	cadeia descricao[5]={"Futbol", "Nave", "Aventura", "labirinto", "Roubo"}
+	real precoJogos[5]={200.00, 80.00, 150.00, 70.00, 450.00}
+	cadeia opcaoJogos[5]={"[1]", "[2]", "[3]", "[4]", "[5]"}
+	para(inteiro i=0; i<5;i++){
+		escreva("\n",opcaoJogos[i]," ", nomeJogos[i], " R$" ,precoJogos[i], "\n")
+		escreva(descricao[i], "\nEstoque: ", quantidadeJogos[i], "\n")
+		}
+	escreva("\n[6]Carrinho\n\n[7]Voltar Menu")
+	escreva("\n\nEscolha sua Opcao!")
+	leia(opcao3)
+
+	escolha(opcao3){
+		caso 1:
+			limpa()
+			escreva("Voce Adicionou ", nomeJogos[0]," ao carrinho")
+			escreva("\n")
+			jogos()
+		pare
+		caso 2:
+			limpa()
+			escreva("Voce Adicionou ", nomeJogos[1]," ao carrinho")
+			escreva("\n")
+			jogos()
+		pare
+		caso 3:
+			limpa()
+			escreva("Voce Adicionou ", nomeJogos[2]," ao carrinho")
+			escreva("\n")
+			jogos()
+		pare
+		caso 4:
+			limpa()
+			escreva("Voce Adicionou ", nomeJogos[3]," ao carrinho")
+			escreva("\n")
+			jogos()
+		pare
+		caso 5:
+			limpa()
+			escreva("Voce Adicionou ", nomeJogos[4]," ao carrinho")
+			escreva("\n")
+			jogos()
+		pare
+		caso 6:
+			//Chamar funcao carrinho
+		pare
+		caso 7:
+			//chamar Menu
+		pare
+			//Tratar Erros
+		}
 	}
 	funcao consoles(){
 		inteiro opcao2
@@ -219,8 +275,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+ * @POSICAO-CURSOR = 1844; 
 
- * @POSICAO-CURSOR = 1936; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
