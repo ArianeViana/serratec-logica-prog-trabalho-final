@@ -76,7 +76,11 @@ programa
   	  		consoles()
 		  	pare
 		  	caso 3:
-		  		//Acessorios- Andrea
+
+		  		acessorios()
+
+
+
 		  	pare
 		  	caso 4:
 		  		//loigin-Ricardo
@@ -159,6 +163,55 @@ programa
 				
 				}
 	}
+
+
+  funcao acessorios ()
+	{
+     cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
+     inteiro opcao
+	cadeia nome_produto[5]= {"controle sem fio Xbox","Teclado de juegos inalambricos Coloridas retroiluminarias ", "Mouse Gamer Usb Msi 4200DPI Clutch GM08", "Controle Mobile Raze", "Kishi de Android Estuche FR-TEC"}
+	cadeia descricao[5]= {"compatível com dispositivos selecionados e versões de sistema operacional.", "O teclado mais desejado modelo: K82.", "Auto-calibração, roda de rolagem ajusável, fio trançado em nylon.", "Eleve o nível do seu desempenho de jogo em dispositivos móveis.","Proteção de caixa rídida para seu controlador kishi: Esta bolsa de viagem protetora manterá seu controlador móvel Razer Kishi protegido." }
+	inteiro Qtd[5] = {30, 12, 20, 15, 25}
+	inteiro preco[5]= {500 , 300 , 150, 400, 100}
+	
+	para (inteiro a=0; a<5; a++) {
+			escreva("\n",numero[a], " ", nome_produto[a],": ", preco[a],"R$", "\n" ,descricao[a],"\n", "estoque ", Qtd[a],"\n")
+		                        }
+		          escreva("\nQual produto você deseja comprar?\n")
+		          escreva("\n [6] Adicionar no carrinho\n\n [7] Voltar ao menu principal\n")
+		          escreva("\nEscolha uma opção: ")
+		          leia(opcao)
+		          
+		  		 escolha (opcao) {
+		   			caso 1: escreva("\nVocê adicionou: ", nome_produto[0], " ao carrinho")
+		   				acessorios()
+		   			pare
+
+		   			caso 2: escreva("\nVocê adicionou: ", nome_produto[1], " ao carrinho")
+		   				acessorios()
+		   			pare
+                         	
+		   			caso 3: escreva("\nVocê adicionou: ", nome_produto[2], " ao carrinho")
+		   				acessorios()
+		   			pare
+
+		   			caso 4: escreva("\nVocê adicionou: ", nome_produto[3], " ao carrinho")
+		   				acessorios()
+		   			pare
+
+		   			caso 5: escreva("\nVocê adicionou: ", nome_produto[4], " ao carrinho")
+		   				acessorios()
+		   			pare
+
+		   			caso 6: //função carrinho
+		   			pare
+
+		   			caso 7: // voltar ao menu
+		   	
+		   }
+	}
+	
+	
 }
  
 /* $$$ Portugol Studio $$$ 
@@ -166,7 +219,8 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 127; 
+
+ * @POSICAO-CURSOR = 1936; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
