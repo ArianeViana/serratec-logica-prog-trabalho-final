@@ -17,7 +17,7 @@ programa
 		  		//Jogos-Douglas
 		  	pare
 		  	caso 2:
-		  		consoles()
+  	  		consoles()
 		  	pare
 		  	caso 3:
 		  		//Acessorios- Andrea
@@ -103,12 +103,6 @@ programa
 				
 				}
 }
-}
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
  * @POSICAO-CURSOR = 2361; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
