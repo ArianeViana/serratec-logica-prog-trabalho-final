@@ -64,7 +64,6 @@ programa
 		escreva("-------------------------------------------\n")
 		// chamar função menu
 	}
-	
 	funcao menuPrincipal(){
 		  escreva("[1] Jogos\n[2] Consoles\n[3] Acessórios\n[4] Voltar Login\n[5] Carrinho\n[6] LogOut ")
 		  escreva("\nEscolha uma opção: ")
