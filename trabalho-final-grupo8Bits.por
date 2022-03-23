@@ -2,12 +2,68 @@ programa
 {
 	
 	inteiro  opcaoMenuPrincipal
+	cadeia usuario
+	inteiro senha
 	funcao inicio()
 	{	// chamar usuario logado
+		login()
 		menuPrincipal()
 		
 	}
-	
+
+	funcao login(){
+		escreva("-------------------------------------------\n")
+		escreva("\t»»»»» IDENTIFICAÇÃO «««««\n")
+		escreva("-------------------------------------------\n")
+		escreva("Nome de usuário:\n")
+		escreva("(letras minúsculas e sem espaço)\n")
+		leia(usuario)
+		escreva("Senha: \n")
+		leia(senha)
+
+		limpa()	
+		
+
+		se (usuario == "ricardo" e senha == 123) {
+			boasVindas()
+		}
+			senao se (usuario == "thiago" e senha == 234){
+				boasVindas()
+			}
+				senao se (usuario == "ariane" e senha == 345){
+					boasVindas()
+				}
+					senao se (usuario == "douglas" e senha == 456){
+						boasVindas()
+					}
+						senao se (usuario == "andrea" e senha == 567){
+							boasVindas()
+						}
+							senao se (usuario == "vanessa" e senha == 678){
+								boasVindas()
+							}
+								senao se (usuario == "admin" e senha == 789){
+									boasVindas()	
+								}	
+					
+		senao
+		{
+			escreva("-------------------------------------------\n")
+			escreva(" ## usuário ou senha inválidos ##\n")
+			escreva("-------------------------------------------\n")
+			escreva(" Tente Novamente \n")
+			login()	
+		}
+			
+	}
+	funcao boasVindas(){
+		escreva("-------------------------------------------\n")
+		escreva("\t Olá ", usuario, ", seja bem-vindo(a)!\n")
+		escreva("-------------------------------------------\n")
+		escreva("\t»»»»» BOAS COMPRAS «««««\n")
+		escreva("-------------------------------------------\n")
+		// chamar função menu
+	}
 	funcao menuPrincipal(){
 		  escreva("[1] Jogos\n[2] Consoles\n[3] Acessórios\n[4] Voltar Login\n[5] Carrinho\n[6] LogOut ")
 		  escreva("\nEscolha uma opção: ")
@@ -102,8 +158,15 @@ programa
 				//Tratar erros
 				
 				}
+	}
 }
- * @POSICAO-CURSOR = 2361; 
+ 
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 127; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
