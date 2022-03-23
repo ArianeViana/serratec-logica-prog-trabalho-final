@@ -76,7 +76,11 @@ programa
   	  		consoles()
 		  	pare
 		  	caso 3:
+
 		  		acessorios()
+
+
+
 		  	pare
 		  	caso 4:
 		  		//loigin-Ricardo
@@ -160,6 +164,7 @@ programa
 				}
 	}
 
+
   funcao acessorios ()
 	{
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
@@ -214,6 +219,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 1936; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
