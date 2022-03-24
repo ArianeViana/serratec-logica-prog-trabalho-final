@@ -9,14 +9,16 @@ programa
 	cadeia addCarrinho[30] 
 
 	funcao inicio()
-	{	// chamar usuario logado
+	{	
+		// chamar usuario logado
+		logo()
 		login()
 		menuPrincipal()
 		
 	}
 
 	funcao login(){
-		escreva("-------------------------------------------\n")
+		escreva("-------------------------------------------\n\n\n\n\n\n\n\n\n")
 		escreva("\t»»»»» IDENTIFICAÇÃO «««««\n")
 		escreva("-------------------------------------------\n")
 		escreva("Nome de usuário:\n")
@@ -73,27 +75,24 @@ programa
 		  escreva("\nEscolha uma opção: ")
 		  leia(opcaoMenuPrincipal)
 		  escolha(opcaoMenuPrincipal){
-		  	caso 1: 
-		  	jogos()
+		  	caso 1:
+		  		limpa()
+		  		jogos()
 		  	pare
 		  	caso 2:
-  	  		consoles()
+		  		limpa()
+  	  			consoles()
 		  	pare
 		  	caso 3:
-
+		  		limpa()
 		  		acessorios()
-
-
-
 		  	pare
 		  	caso 4:
 		  		//loigin-Ricardo
 		  	pare
 		  	caso 5:
-
 		  		limpa()
 		  		carrinho()
-
 		  	pare
 		  	caso 6:
 		  		//logOut
@@ -114,23 +113,24 @@ programa
 	funcao jogos(){
 		
 	inteiro opcao3
-	cadeia nomeJogos[5]={"Fifa22","Desert Strike","Minecraft","Pac-Man","Pokemon Legends Arceus"}
-	inteiro quantidadeJogos[5]={9, 1, 5, 2, 9}
-	cadeia descricao[5]={"Futbol", "Nave", "Aventura", "labirinto", "Roubo"}
-	real precoJogos[5]={200.00, 80.00, 150.00, 70.00, 450.00}
+	cadeia nomeJogos[5]={"Serratec Adveture","Zepa Conquest","Limpa()","Enquanto infinity","Save the Programmer"}
+	inteiro quantidadeJogos[5]={9, 1, 5, 2, 402
+	}
+	cadeia descricao[5]={"Jogo de aventura","Jogo de ação","Jogo de Quebra-Cabeça","Jogo Infinito","Jogo de Terror"}
+	real precoJogos[5]={199.99, 299.99, 149.99, 69.99, 249.99}
 	cadeia opcaoJogos[5]={"[1]", "[2]", "[3]", "[4]", "[5]"}
 	para(inteiro i=0; i<5;i++){
 		escreva("\n",opcaoJogos[i]," ", nomeJogos[i], " R$" ,precoJogos[i], "\n")
 		escreva(descricao[i], "\nEstoque: ", quantidadeJogos[i], "\n")
 		}
 	escreva("\n[6]Carrinho\n\n[7]Voltar Menu")
-	escreva("\n\nEscolha sua Opcao!")
+	escreva("\n\nEscolha sua opção!")
 	leia(opcao3)
 
 	escolha(opcao3){
 		caso 1:
 			limpa()
-			escreva("Voce Adicionou ", nomeJogos[0]," ao carrinho")
+			escreva("Você Adicionou ", nomeJogos[0]," ao carrinho!")
 			escreva("\n")
 
 			somaCarrinho = somaCarrinho + 1
@@ -140,7 +140,7 @@ programa
 		pare
 		caso 2:
 			limpa()
-			escreva("Voce Adicionou ", nomeJogos[1]," ao carrinho")
+			escreva("Você Adicionou ", nomeJogos[1]," ao carrinho!")
 			escreva("\n")
 
 			somaCarrinho = somaCarrinho + 1
@@ -150,7 +150,7 @@ programa
 		pare
 		caso 3:
 			limpa()
-			escreva("Voce Adicionou ", nomeJogos[2]," ao carrinho")
+			escreva("Você Adicionou ", nomeJogos[2]," ao carrinho!")
 			escreva("\n")
 
 			somaCarrinho = somaCarrinho + 1
@@ -160,7 +160,7 @@ programa
 		pare
 		caso 4:
 			limpa()
-			escreva("Voce Adicionou ", nomeJogos[3]," ao carrinho")
+			escreva("Você Adicionou ", nomeJogos[3]," ao carrinho!")
 			escreva("\n")
 
 			somaCarrinho = somaCarrinho + 1
@@ -170,7 +170,7 @@ programa
 		pare
 		caso 5:
 			limpa()
-			escreva("Voce Adicionou ", nomeJogos[4]," ao carrinho")
+			escreva("Você Adicionou ", nomeJogos[4]," ao carrinho!")
 			escreva("\n")
 
 			somaCarrinho = somaCarrinho + 1
@@ -381,7 +381,35 @@ programa
 		
 	}
 
-	
+	funcao logo(){
+limpa()
+escreva("\n      *****                             ****              ****             ****           ")
+escreva("\n    *********                         ********          ********         ********         ")
+escreva("\n   *****  ****                       **********        **********       **********        ")
+escreva("\n   ***********                      ***  ****  *      ***  ****  *     ***  ****  *       ")
+escreva("\n  *********                         ***  ****  *      ***  ****  *     ***  ****  *       ")
+escreva("\n  *****            **   **   **     ************      ************     ************       ")
+escreva("\n  ***             **** **** ****    ************      ************     ************       ")
+escreva("\n  *****           **** **** ****    ************      ************     ************       ")
+escreva("\n  *********        **   **   **     ************      ************     ************       ")
+escreva("\n    **********                      ************      ************     ************       ")
+escreva("\n    **********                      ************      ************     ************       ")
+escreva("\n     ********                       *** **** ***      *** **** ***     *** **** ***       ")
+escreva("\n       ****                          *   **   *        *   **   *       *   **   *        ")
+escreva("\n                                                                                          ")
+escreva("\n                                                                                          ")
+escreva("\n                                                                                          ")
+escreva("\n      ***********             *********   ***   *************   ***********               ")
+escreva("\n      ***********             **********  ***   *************   ***********               ")
+escreva("\n      ***     ***             ***     **  ***        ***        ***                       ")
+escreva("\n      ***     ***             ***     **  ***        ***        ***                       ")
+escreva("\n      ***********   *******   **********  ***        ***        ***********               ")
+escreva("\n      ***********   *******   **********  ***        ***        ***********               ")
+escreva("\n      ***     ***             ***     **  ***        ***                ***               ")
+escreva("\n      ***     ***             ***     **  ***        ***                ***               ")
+escreva("\n      ***********             **********  ***        ***        ***********               ")
+escreva("\n      ***********             *********   ***        ***        ***********               ")
+	}
 	
 }
  
@@ -390,10 +418,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-
- * @POSICAO-CURSOR = 8833; 
- * @DOBRAMENTO-CODIGO = [60, 103, 117];
-
+ * @POSICAO-CURSOR = 2577; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
