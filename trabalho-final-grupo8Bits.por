@@ -4,8 +4,10 @@ programa
 	inteiro  opcaoMenuPrincipal
 	cadeia usuario
 	inteiro senha
+
 	inteiro somaCarrinho = 0
 	cadeia addCarrinho[30] 
+
 	funcao inicio()
 	{	// chamar usuario logado
 		login()
@@ -88,8 +90,10 @@ programa
 		  		//loigin-Ricardo
 		  	pare
 		  	caso 5:
+
 		  		limpa()
 		  		carrinho()
+
 		  	pare
 		  	caso 6:
 		  		//logOut
@@ -128,38 +132,47 @@ programa
 			limpa()
 			escreva("Voce Adicionou ", nomeJogos[0]," ao carrinho")
 			escreva("\n")
+
 			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[0]
+
 			jogos()
 		pare
 		caso 2:
 			limpa()
 			escreva("Voce Adicionou ", nomeJogos[1]," ao carrinho")
 			escreva("\n")
+
 			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[1]
+
 			jogos()
 		pare
 		caso 3:
 			limpa()
 			escreva("Voce Adicionou ", nomeJogos[2]," ao carrinho")
 			escreva("\n")
+
 			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[2]
+
 			jogos()
 		pare
 		caso 4:
 			limpa()
 			escreva("Voce Adicionou ", nomeJogos[3]," ao carrinho")
 			escreva("\n")
+
 			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[3]
+
 			jogos()
 		pare
 		caso 5:
 			limpa()
 			escreva("Voce Adicionou ", nomeJogos[4]," ao carrinho")
 			escreva("\n")
+
 			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[4]
 			jogos()
@@ -171,6 +184,7 @@ programa
 		caso 7:
 			limpa()
 			menuPrincipal()
+
 		pare
 			//Tratar Erros
 		}
@@ -195,8 +209,10 @@ programa
 				limpa() 
 				escreva("\nVocê adicionou ", nomeConsole[0], " ao carrinho")
 				escreva("\n")
+
 				somaCarrinho = somaCarrinho + 1
 				addCarrinho[somaCarrinho] = nomeConsole[0]
+
 				consoles()
 				
 			pare
@@ -204,36 +220,45 @@ programa
 				limpa() 
 				escreva("\nVocê adicionou ", nomeConsole[1], " ao carrinho")
 				escreva("\n")
+
 				somaCarrinho = somaCarrinho + 1
 				addCarrinho[somaCarrinho] = nomeConsole[1]
+
 				consoles()
 			pare
 			caso 3: 
 				limpa() 
 				escreva("\nVocê adicionou ", nomeConsole[2], " ao carrinho")
 				escreva("\n")
+
 				somaCarrinho = somaCarrinho + 1
 				addCarrinho[somaCarrinho] = nomeConsole[2]
+
 				consoles()
 			pare
 			caso 4: 
 				limpa()
 				escreva("\nVocê adicionou ", nomeConsole[3], " ao carrinho")
 				escreva("\n")
+
 				somaCarrinho = somaCarrinho + 1
 				addCarrinho[somaCarrinho] = nomeConsole[3]
+
 				consoles()
 			pare
 			caso 5: 
 				limpa()
 				escreva("\nVocê adicionou ", nomeConsole[4], " ao carrinho")
 				escreva("\n")
+
 				somaCarrinho = somaCarrinho + 1
 				addCarrinho[somaCarrinho] = nomeConsole[4]
+
 				consoles()
 			pare
 			caso 6:
 				limpa() 
+
 				carrinho()
 			pare
 			caso 7:
@@ -250,12 +275,15 @@ programa
 	{
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
      inteiro opcao
+
 	cadeia nomeAcessorios[5]= {"controle sem fio Xbox","Teclado de juegos inalambricos Coloridas retroiluminarias ", "Mouse Gamer Usb Msi 4200DPI Clutch GM08", "Controle Mobile Raze", "Kishi de Android Estuche FR-TEC"}
+
 	cadeia descricao[5]= {"compatível com dispositivos selecionados e versões de sistema operacional.", "O teclado mais desejado modelo: K82.", "Auto-calibração, roda de rolagem ajusável, fio trançado em nylon.", "Eleve o nível do seu desempenho de jogo em dispositivos móveis.","Proteção de caixa rídida para seu controlador kishi: Esta bolsa de viagem protetora manterá seu controlador móvel Razer Kishi protegido." }
 	inteiro Qtd[5] = {30, 12, 20, 15, 25}
 	inteiro preco[5]= {500 , 300 , 150, 400, 100}
 	
 	para (inteiro a=0; a<5; a++) {
+
 			escreva("\n",numero[a], " ", nomeAcessorios[a],": ", preco[a],"R$", "\n" ,descricao[a],"\n", "estoque ", Qtd[a],"\n")
 		                        }
 	escreva("\nQual produto você deseja comprar?\n")
@@ -352,6 +380,7 @@ programa
 		
 		
 	}
+
 	
 	
 }
@@ -361,8 +390,10 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 8833; 
  * @DOBRAMENTO-CODIGO = [60, 103, 117];
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
