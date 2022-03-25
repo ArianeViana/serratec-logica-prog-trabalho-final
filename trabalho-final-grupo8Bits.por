@@ -2,27 +2,32 @@ programa
 {
 	inclua biblioteca Util --> u
 	inclua biblioteca Texto --> t
+	inclua biblioteca Tipos --> tipos
 	
-	inteiro  opcaoMenuPrincipal
+	inteiro opcaoMenuPrincipal, alteracao
 	cadeia usuario, senha, resposta, resposta2
 	cadeia vetorUsuarios [7] = {"ricardo", "thiago", "ariane", "andrea", "douglas", "vanessa", "admin"}
 	cadeia vetorSenhas [7] = {"123", "t123", "a123", "a234", "d123","v123", "ad123"}
+	cadeia nomeJogos[5]={"Serratec Adventure","Zepa Conquest","Limpa()","Enquanto infinity","Save the Programmer"}
+	cadeia descricaoJogos[5]={"Jogo de aventura","Jogo de ação","Jogo de Quebra-Cabeça","Jogo Infinito","Jogo de Terror"}
+	cadeia nomeConsole[5]={"Pc Serratec", "Serra Station 8", "Super Lógica", "Não Entendo SWitch", "Serra Drive"}
+	cadeia descConsole[5]={"Descrição: Agilidade", "Descrição: Necessita de persistência", "Descrição : Memória 1 TB  ", "Descrição: Recussividade", "Descrição: Edição limitada"}
+	cadeia nomeAcessorios[5]= {"Controle sem fio paçoquinha++","Teclado de jogos variáveis infinitas", "Progdragão", "Mouse Gamer limpa +rápido", "Livro * No final tudo da certo *"}
+	cadeia descricaoAcessorios[5]= {"Aumente seu nível de motivação e agilidade na hora de enfrentar novos desafios.", "Eleve o nível do seu desempenho de jogo.", "Bonequinho para deixar o seu cantinho ainda mais bonito.", "O mouse mais desejado dos alunos de programação.","Dicas de como commitar no seu repositório de GitHub sem surtar"}
 	inteiro somaCarrinho = 0
 	cadeia addCarrinho[30] 
 	cadeia addCarrinhoExibicao[30] 
 	inteiro quantidadeItem[15] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 	real precoAuxiliar[15]
 	logico teste = verdadeiro
+	
 
 
 	funcao inicio()
 	{	
-		// chamar usuario logado
-		
 		entrar()
 		login()
-		menuPrincipal()
-		
+		menuPrincipal()	
 	}
 
 	funcao entrar(){
@@ -36,28 +41,24 @@ programa
 		leia(resposta2)
 		limpa()
 	
-						
-			se(resposta2 == "s" ou resposta2 == "S"){
-				login()				      				
-				//limpa()	
-				//processo()
-							
-			}
-			senao se (resposta2 == "n" ou resposta2 == "N"){
-				escreva("\t###########################\n")
-				escreva("\t# Até logo, volte sempre! #\n")
-				escreva("\t###########################\n")
+		se(resposta2 == "s" ou resposta2 == "S"){
+			login()				      				
+		}
+		senao se (resposta2 == "n" ou resposta2 == "N"){
+			escreva("\t###########################\n")
+			escreva("\t# Até logo, volte sempre! #\n")
+			escreva("\t###########################\n")
+			u.aguarde(1500)
+			limpa()
+			entrar()
+		}
+			senao{
+				escreva("-------------------------------------------\n")
+				escreva("\t# Opção inválida #\n")
+				escreva("-------------------------------------------\n")
 				u.aguarde(1500)
 				limpa()
-				entrar()
-			}
-				senao{
-					escreva("-------------------------------------------\n")
-					escreva("\t# Opção inválida #\n")
-					escreva("-------------------------------------------\n")
-					u.aguarde(1500)
-					limpa()
-					login()
+				login()
 			}
 			
 	}
@@ -105,12 +106,11 @@ programa
 		funcao boasVindas(){
 			limpa()
 			escreva("-------------------------------------------\n")
-			escreva("\t Olá ", t.caixa_alta(usuario), ", seja bem-vindo!\n")
+			escreva("\t Olá ", t.caixa_alta(usuario), ", seja bem-vindo(a)!\n")
 			escreva("-------------------------------------------\n")
 			escreva("\t»»»»» BOAS COMPRAS «««««\n")
 			escreva("-------------------------------------------\n")
 			
-			//limpa()
 			menuPrincipal()
 	}
 		
@@ -135,7 +135,7 @@ programa
 									boasVindas()
 								}
 									senao se (usuario == vetorUsuarios[6] e senha == vetorSenhas[6]){
-	       								boasVindas()
+	       								menuAdm()
 									}	
 						
 				senao
@@ -147,44 +147,45 @@ programa
 				u.aguarde(1000)									
 				limpa()
 				login()
-				//processo()
+				
 				
 				}
 		}
 
 	funcao menuPrincipal(){
+		  escreva("\t======Menu-Principal======\n")
 		  escreva("[1] Jogos\n[2] Consoles\n[3] Acessórios\n[4] Voltar Login\n[5] Carrinho\n[6] LogOut ")
 		  escreva("\nEscolha uma opção: ")
 		  leia(opcaoMenuPrincipal)
+		  limpa()
 		  escolha(opcaoMenuPrincipal){
-		  	caso 1:
-		  		limpa()
+		  	caso 1: 
+		  		escreva("======Jogos=====")
 		  		jogos()
 		  	pare
 		  	caso 2:
-		  		limpa()
+		  		escreva("======Consoles=====")
   	  			consoles()
 		  	pare
 		  	caso 3:
-		  		limpa()
+		  	escreva("======Acessórios=====")
 		  		acessorios()
 		  	pare
 		  	caso 4:
-		  		//loigin-Ricardo
+		  		login()
 		  	pare
 		  	caso 5:
-		  		limpa()
+		 		limpa()
 		  		carrinho()
 		  	pare
 		  	caso 6:
-		  		//logOut
+		  		logOut()
 		  	pare
 		  	caso contrario:
 		  		erroEscolha()
-		  		
 		  }
 		  
-	}
+			}
 	      
 	funcao erroEscolha(){
 			limpa()
@@ -192,18 +193,204 @@ programa
 			menuPrincipal()
 		
 	}
+
+	funcao logOut(){
+		inteiro sair 
+		escreva("Deseja sair do sistema? [1] Sim ou [2] Não: ")
+		leia(sair)
+		escolha(sair){
+			caso 1:
+				escreva("Você saiu do sistema\n")
+				limpa()
+				login()
+				menuPrincipal()
+			
+			pare
+			caso 2:
+				limpa()
+				escreva("Menu Principal\n")
+				menuPrincipal()
+			pare
+			caso contrario:
+				limpa()
+				logOut()
+		}
+	}
+
+	funcao menuAdm(){
+		escreva("=====Bem-vindo Administrador=====\n\n")
+		escreva("O que deseja alterar?\n")
+		escreva("[1]Alterar usuário\n[2]Alterar Jogo\n[3]Alterar Console\n[4]Alterar Acessório\n[5]LogOut")
+		escreva("\nDigite sua opção: ")
+		leia(alteracao)
+		limpa()
+
+		escolha(alteracao){
+		caso 1: 
+			editarUsuario()
+		pare
+		caso 2:
+			editarJogo()
+		pare
+		caso 3:
+			editarConsole()
+		pare
+		caso 4:
+			editarAcessorio()
+		pare
+		caso 5:
+			limpa()
+			logOutAdm()
+		pare
+		caso contrario:
+			limpa()
+			escreva("[1]Alterar usuário\n[2]Alterar Jogo\n[3]Alterar Console\n[4]Alterar Acessório\n[5]LogOut\n")	
+			limpa()
+			menuAdm()				
+		}
+	}
+
+	funcao logOutAdm(){
+		inteiro sair 
+		escreva("Deseja sair do sistema? [1] Sim ou [2] Não: ")
+		leia(sair)
+		escolha(sair){
+			caso 1:
+				escreva("Você saiu do sistema\n")
+				login()
+			pare
+			caso 2:
+				menuAdm()
+			pare
+			caso contrario:
+				limpa()
+				logOutAdm()
+		}
+	}
+
+	funcao editarUsuario(){
+		inteiro usuarioParaEditar
+		cadeia novoNomeUsuario, novaSenha
+		escreva("Qual usuário deseja editar: ")
+		escreva("\n[1] ricardo","\n[2] thiago", "\n[3] ariane", "\n[4] andrea", "\n[5] douglas", "\n[6] vanessa", "\n[7] admin","\n[8] LogOut: ")
+		leia(usuarioParaEditar)
+		escreva("Digite um novo nome: ")
+		leia(novoNomeUsuario)
+		escreva("Digite uma nova senha: ")
+		leia(novaSenha)
+		limpa()
+
+		escolha(usuarioParaEditar){
+			caso 1:
+				vetorUsuarios [0] = novoNomeUsuario
+				vetorSenhas [0] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 2:
+				vetorUsuarios [1] = novoNomeUsuario
+				vetorSenhas [1] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 3:
+				vetorUsuarios [2] = novoNomeUsuario
+				vetorSenhas [2] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 4:
+				vetorUsuarios [3] = novoNomeUsuario
+				vetorSenhas [3] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 5:
+				vetorUsuarios [4] = novoNomeUsuario
+				vetorSenhas [4] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 6:
+				vetorUsuarios [5] = novoNomeUsuario
+				vetorSenhas [5] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 7:
+				vetorUsuarios [6] = novoNomeUsuario
+				vetorSenhas [6] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso 8:
+				vetorUsuarios [7] = novoNomeUsuario
+				vetorSenhas [7] = novaSenha
+				escreva("Os dados do usuário foi editado\n")
+			pare
+			caso contrario :
+				escreva("\n[1] ricardo","\n[2] thiago", "\n[3] ariane", "\n[4] andrea", "\n[5] douglas", "\n[6] vanessa", "\n[7] admin","\n[8] LogOut: ")
+				editarUsuario()
+		
+		}
+		u.aguarde(1000)
+		menuAdm()
+	}
+
+	funcao editarJogo(){
+		inteiro jogoParaEditar
+		cadeia novoNomeJogo, novaDescricao
+		escreva("Qual produto deseja editar: ")
+		escreva("\n[1] Serratec Adventure","\n[2] Zepa Conquest","\n[3] Limpa()","\n[4] Enquanto infinity","\n[5] Save the Programmer","\n[6]LogOut: ")
+		leia(jogoParaEditar)
+		escreva("Para qual nome deseja alterar: ")
+		leia(novoNomeJogo)
+		escreva("Qual a nova descrição: ")
+		leia(novaDescricao)
+		limpa()
+		
+		escolha(jogoParaEditar){
+			caso 1:
+				nomeJogos[0] = novoNomeJogo
+				descricaoJogos[0] = novaDescricao
+				escreva("O jogo foi editado\n")
+			pare
+			caso 2:
+				nomeJogos[1] = novoNomeJogo
+				descricaoJogos[1] = novaDescricao
+				escreva("O jogo foi editado\n")
+			pare
+			caso 3:
+				nomeJogos[2] = novoNomeJogo
+				descricaoJogos[2] = novaDescricao
+				escreva("O jogo foi editado\n")
+			pare
+			caso 4:
+				nomeJogos[3] = novoNomeJogo
+				descricaoJogos[3] = novaDescricao
+				escreva("O jogo foi editado\n")
+			pare
+			caso 5:
+				nomeJogos[4] = novoNomeJogo
+				descricaoJogos[4] = novaDescricao
+				escreva("O jogo foi editado\n")
+			pare
+			caso 6:
+				logOut()
+			pare
+			caso contrario :
+				escreva("\n[1] Serratec Adveture","\n[2] Zepa Conquest","\n[3] Limpa()","\n[4] Enquanto infinity","\n[5] Save the Programmer","\n[6]LogOut: ")
+				editarJogo()
+		
+		}
+		u.aguarde(1000)
+		menuAdm()
+	}
 	funcao jogos(){
 
 		
 	inteiro opcao1
-	cadeia nomeJogos[5]={"Serratec Adveture","Zepa Conquest","Limpa()","Enquanto infinity","Save the Programmer"}
+	
 	inteiro quantidadeJogos[5]={9, 10, 13, 20, 40}
-	cadeia descricao[5]={"Jogo de aventura","Jogo de ação","Jogo de Quebra-Cabeça","Jogo Infinito","Jogo de Terror"}
+	
 	real precoJogos[5]={199.99, 299.99, 149.99, 69.99, 249.99}
 	cadeia opcaoJogos[5]={"[1]", "[2]", "[3]", "[4]", "[5]"}
 	para(inteiro k=0; k<5;k++){
 		escreva("\n",opcaoJogos[k]," ", nomeJogos[k], " R$" ,precoJogos[k], "\n")
-		escreva(descricao[k], "\nEstoque: ", quantidadeJogos[k], "\n")
+		escreva(descricaoJogos[k], "\nEstoque: ", quantidadeJogos[k], "\n")
 		}
 	escreva("\n[6]Carrinho\n\n[7]Voltar Menu")
 	escreva("\n\nEscolha o número da opção que você deseja realizar: ")
@@ -398,11 +585,61 @@ programa
 
 		}
 	}
+
+	funcao editarConsole(){
+		inteiro ConsoleParaEditar
+		cadeia novoNomeConsole, novaDescricao
+		escreva("Qual produto deseja editar: ")
+		escreva("\n[1] Pc Serratec", "[2] Serra Station 8", "[3] Super Lógica", "[4]Não Entendo SWitch", "[5]Serra Drive","\n[6]LogOut: ")
+		leia(ConsoleParaEditar)
+		escreva("Para qual nome deseja alterar: ")
+		leia(novoNomeConsole)
+		escreva("Qual a nova descrição: ")
+		leia(novaDescricao)
+		limpa()
+		
+		escolha(ConsoleParaEditar){
+			caso 1:
+				nomeConsole[0] = novoNomeConsole
+				descConsole[0] = novaDescricao
+				escreva("O console foi editado\n")
+			pare
+			caso 2:
+				nomeConsole[1] = novoNomeConsole
+				descConsole[1] = novaDescricao
+				escreva("O console foi editado\n")
+			pare
+			caso 3:
+				nomeConsole[2] = novoNomeConsole
+				descConsole[2] = novaDescricao
+				escreva("O console foi editado\n")
+			pare
+			caso 4:
+				nomeConsole[3] = novoNomeConsole
+				descConsole[3] = novaDescricao
+				escreva("O console foi editado\n")
+			pare
+			caso 5:
+				nomeConsole[4] = novoNomeConsole
+				descConsole[4] = novaDescricao
+				escreva("O console foi editado\n")
+			pare
+			caso 6:
+				logOut()
+			pare
+			caso contrario :
+				escreva("\n[1] Pc Serratec", "[2] Serra Station 8", "[3] Super Lógica", "[4]Não Entendo SWitch", "[5]Serra Drive","\n[6]LogOut: ")
+				editarConsole()
+		
+		}
+		u.aguarde(1000)
+		menuAdm()
+	}
 	funcao consoles(){
 		inteiro opcao2
-		cadeia nomeConsole[5]={"Pc Serratec", "Serra Station 8", "Super Lógica", "Não Entendo SWitch", "Serra Drive"}
+		
 		inteiro qtdeConsole[5]={23, 14, 22, 15, 17}
-		cadeia descConsole[5]={"Descrição: Agilidade", "Descrição: Necessita de persistência", "Descrição : Memória 1 TB  ", "Descrição: Recussividade", "Descrição: Edição limitada"}
+		
 		real precoConsole[5]={2499.99, 5499.99, 999.99, 2999.99, 999.99}
 		cadeia opcaoConsole[5]={"[1]", "[2]", "[3]", "[4]", "[5]"}
 		para(inteiro k=0; k<5;k++){
@@ -578,6 +815,55 @@ programa
 
 	}
 
+funcao editarAcessorio(){
+		inteiro acessorioParaEditar
+		cadeia novoNomeacessorio, novaDescricao
+		escreva("Qual produto deseja editar: ")
+		escreva("\n[1] Controle sem fio paçoquinha++","\n[2] Teclado de jogos variáveis infinitas", "\n[3] Progdragão", "\n[4] Mouse Gamer limpa +rápido", "\n[5]Livro * No final tudo da certo *","\n[6]LogOut: ")
+		leia(acessorioParaEditar)
+		escreva("Para qual nome deseja alterar: ")
+		leia(novoNomeacessorio)
+		escreva("Qual a nova descrição: ")
+		leia(novaDescricao)
+		limpa()
+		
+		escolha(acessorioParaEditar){
+			caso 1:
+				nomeAcessorios[0] = novoNomeacessorio
+				descricaoAcessorios[0] = novaDescricao
+				escreva("O acessorio foi editado\n")
+			pare
+			caso 2:
+				nomeAcessorios[1] = novoNomeacessorio
+				descricaoAcessorios[1] = novaDescricao
+				escreva("O acessorio foi editado\n")
+			pare
+			caso 3:
+				nomeAcessorios[2] = novoNomeacessorio
+				descricaoAcessorios[2] = novaDescricao
+				escreva("O acessorio foi editado\n")
+			pare
+			caso 4:
+				nomeAcessorios[3] = novoNomeacessorio
+				descricaoAcessorios[3] = novaDescricao
+				escreva("O acessorio foi editado\n")
+			pare
+			caso 5:
+				nomeAcessorios[4] = novoNomeacessorio
+				descricaoAcessorios[4] = novaDescricao
+				escreva("O acessorio foi editado\n")
+			pare
+			caso 6:
+				logOut()
+			pare
+			caso contrario :
+				escreva("\n[1] Controle sem fio paçoquinha++","\n[2] Teclado de jogos variáveis infinitas", "\n[3] Progdragão", "\n[4] Mouse Gamer limpa +rápido", "\n[5]Livro * No final tudo da certo *","\n[6]LogOut: ")
+				editarAcessorio()
+		
+		}
+		u.aguarde(1000)
+		menuAdm()
+	}
 
   funcao acessorios ()
 
@@ -586,9 +872,6 @@ programa
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
 
 
-	cadeia nomeAcessorios[5]= {"Controle sem fio paçoquinha++","Teclado de jogos variáveis infinitas", "Progdragão", "Mouse Gamer limpa +rápido", "Livro * No final tudo da certo *"}
-
-	cadeia descricao[5]= {"Aumente seu nível de motivação e agilidade na hora de enfrentar novos desafios.", "Eleve o nível do seu desempenho de jogo.", "Bonequinho para deixar o seu cantinho ainda mais bonito.", "O mouse mais desejado dos alunos de programação.","Dicas de como commitar no seu repositório de GitHub sem surtar"}
 
 	inteiro Qtd[5] = {30, 12, 20, 15, 25}
 	real precoAcessorios[5]= {199.99 , 299.99 , 149.99, 99.99, 69.99}
@@ -596,7 +879,7 @@ programa
 
 	para (inteiro k=0; k<5; k++) {
 
-			escreva("\n",numero[k], " ", nomeAcessorios[k],": ", precoAcessorios[k],"R$", "\n" ,descricao[k],"\n", "estoque ", Qtd[k],"\n")
+			escreva("\n",numero[k], " ", nomeAcessorios[k],": ","R$ ", precoAcessorios[k], "\n" ,descricaoAcessorios[k],"\n", "estoque ", Qtd[k],"\n")
 		                        }
 	escreva("\nQual produto você deseja comprar?\n")
 	escreva("\n[6] Adicionar no carrinho\n\n[7] Voltar ao menu principal\n")
@@ -840,7 +1123,7 @@ escreva("\n      ***********             *********   ***        ***        *****
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 579; 
+ * @POSICAO-CURSOR = 3672; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
