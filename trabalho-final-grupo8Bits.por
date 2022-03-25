@@ -509,75 +509,178 @@ programa
   {	
 
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
-     inteiro opcao
 
-	cadeia nomeAcessorios[5]= {"controle sem fio Xbox","Teclado de juegos inalambricos Coloridas retroiluminarias ", "Mouse Gamer Usb Msi 4200DPI Clutch GM08", "Controle Mobile Raze", "Kishi de Android Estuche FR-TEC"}
 
-	cadeia descricao[5]= {"compatível com dispositivos selecionados e versões de sistema operacional.", "O teclado mais desejado modelo: K82.", "Auto-calibração, roda de rolagem ajusável, fio trançado em nylon.", "Eleve o nível do seu desempenho de jogo em dispositivos móveis.","Proteção de caixa rídida para seu controlador kishi: Esta bolsa de viagem protetora manterá seu controlador móvel Razer Kishi protegido." }
+	cadeia nomeAcessorios[5]= {"Controle sem fio paçoquinha++","Teclado de jogos variáveis infinitas", "Progdragão", "Mouse Gamer limpa +rápido", "Livro * No final tudo da certo *"}
+
+	cadeia descricao[5]= {"Aumente seu nível de motivação e agilidade na hora de enfrentar novos desafios.", "Eleve o nível do seu desempenho de jogo.", "Bonequinho para deixar o seu cantinho ainda mais bonito.", "O mouse mais desejado dos alunos de programação.","Dicas de como commitar no seu repositório de GitHub sem surtar"}
+
 	inteiro Qtd[5] = {30, 12, 20, 15, 25}
-	inteiro preco[5]= {500 , 300 , 150, 400, 100}
+	real precoAcessorios[5]= {199.99 , 299.99 , 149.99, 99.99, 69.99}
 	
-	para (inteiro a=0; a<5; a++) {
 
-			escreva("\n",numero[a], " ", nomeAcessorios[a],": ", preco[a],"R$", "\n" ,descricao[a],"\n", "estoque ", Qtd[a],"\n")
+	para (inteiro k=0; k<5; k++) {
+
+			escreva("\n",numero[k], " ", nomeAcessorios[k],": ", precoAcessorios[k],"R$", "\n" ,descricao[k],"\n", "estoque ", Qtd[k],"\n")
 		                        }
 	escreva("\nQual produto você deseja comprar?\n")
-	escreva("\n [6] Adicionar no carrinho\n\n [7] Voltar ao menu principal\n")
-	escreva("\nEscolha uma opção: ")
-	leia(opcao)
+	escreva("\n[6] Adicionar no carrinho\n\n[7] Voltar ao menu principal\n")
+	escreva("\nEscolha o número da opção que você deseja realizar: ")
+	leia(opcao3)
 		          
-	escolha (opcao) {
+	escolha (opcao3) {
 			caso 1: 
+				teste = verdadeiro
 				limpa()
-		   		escreva("\nVocê adicionou: ", nomeAcessorios[0], " ao carrinho")
-		   		somaCarrinho = somaCarrinho + 1
+				escreva("Você adicionou ", nomeAcessorios[0]," ao carrinho!")
+				escreva("\n")
 				addCarrinho[somaCarrinho] = nomeAcessorios[0]
-		   		acessorios()
+				
+				para(inteiro j = 0; j <= somaCarrinho; j++){
+					se (addCarrinhoExibicao[j] == nomeAcessorios[0]){
+						teste = falso
+						quantidadeItem[j] = quantidadeItem[j] + 1
+						precoAuxiliar[j] = precoAcessorios[0]
+						acessorios()	
+					}
+				}
+				se (teste == verdadeiro){
+					addCarrinhoExibicao[somaCarrinho] = nomeAcessorios[0]
+					para (inteiro i = 0; i <= somaCarrinho; i++){
+						se(addCarrinhoExibicao[i] == nomeAcessorios[0]){
+							quantidadeItem[i] = quantidadeItem[i] + 1
+							precoAuxiliar[i] = precoAcessorios[0]							
+						}
+					}
+					somaCarrinho = somaCarrinho + 1	
+					acessorios()
+				}
 		   	pare
-
 		   	caso 2: 
-		   		limpa()
-		   		escreva("\nVocê adicionou: ", nomeAcessorios[1], " ao carrinho")
-		   		somaCarrinho = somaCarrinho + 1
+		   		teste = verdadeiro
+				limpa()
+				escreva("Você adicionou ", nomeAcessorios[1]," ao carrinho!")
+				escreva("\n")
 				addCarrinho[somaCarrinho] = nomeAcessorios[1]
-		   		acessorios()
+				
+				para(inteiro j = 0; j <= somaCarrinho; j++){
+					se (addCarrinhoExibicao[j] == nomeAcessorios[1]){
+						teste = falso
+						quantidadeItem[j] = quantidadeItem[j] + 1
+						precoAuxiliar[j] = precoAcessorios[1]
+						acessorios()	
+					}
+				}
+				se (teste == verdadeiro){
+					addCarrinhoExibicao[somaCarrinho] = nomeAcessorios[1]
+					para (inteiro i = 0; i <= somaCarrinho; i++){
+						se(addCarrinhoExibicao[i] == nomeAcessorios[1]){
+							quantidadeItem[i] = quantidadeItem[i] + 1
+							precoAuxiliar[i] = precoAcessorios[0]							
+						}
+					}
+					somaCarrinho = somaCarrinho + 1	
+					acessorios()
+				}
 		   	pare
                          	
 		   	caso 3:
-		   		limpa()
-		   		escreva("\nVocê adicionou: ", nomeAcessorios[2], " ao carrinho")
-		   		somaCarrinho = somaCarrinho + 1
+		   		teste = verdadeiro
+				limpa()
+				escreva("Você adicionou ", nomeAcessorios[2]," ao carrinho!")
+				escreva("\n")
 				addCarrinho[somaCarrinho] = nomeAcessorios[2]
-		   		acessorios()
+				
+				para(inteiro j = 0; j <= somaCarrinho; j++){
+					se (addCarrinhoExibicao[j] == nomeAcessorios[2]){
+						teste = falso
+						quantidadeItem[j] = quantidadeItem[j] + 1
+						precoAuxiliar[j] = precoAcessorios[2]
+						acessorios()	
+					}
+				}
+				se (teste == verdadeiro){
+					addCarrinhoExibicao[somaCarrinho] = nomeAcessorios[2]
+					para (inteiro i = 0; i <= somaCarrinho; i++){
+						se(addCarrinhoExibicao[i] == nomeAcessorios[2]){
+							quantidadeItem[i] = quantidadeItem[i] + 1
+							precoAuxiliar[i] = precoAcessorios[2]							
+						}
+					}
+					somaCarrinho = somaCarrinho + 1	
+					acessorios()
+				}
 		   	pare
 
 		   	caso 4: 
-		   		limpa()
-		   		escreva("\nVocê adicionou: ", nomeAcessorios[3], " ao carrinho")
-		   		somaCarrinho = somaCarrinho + 1
+		   		teste = verdadeiro
+				limpa()
+				escreva("Você adicionou ", nomeAcessorios[3]," ao carrinho!")
+				escreva("\n")
 				addCarrinho[somaCarrinho] = nomeAcessorios[3]
-		   		acessorios()
+				
+				para(inteiro j = 0; j <= somaCarrinho; j++){
+					se (addCarrinhoExibicao[j] == nomeAcessorios[3]){
+						teste = falso
+						quantidadeItem[j] = quantidadeItem[j] + 1
+						precoAuxiliar[j] = precoAcessorios[3]
+						acessorios()	
+					}
+				}
+				se (teste == verdadeiro){
+					addCarrinhoExibicao[somaCarrinho] = nomeAcessorios[3]
+					para (inteiro i = 0; i <= somaCarrinho; i++){
+						se(addCarrinhoExibicao[i] == nomeAcessorios[3]){
+							quantidadeItem[i] = quantidadeItem[i] + 1
+							precoAuxiliar[i] = precoAcessorios[3]							
+						}
+					}
+					somaCarrinho = somaCarrinho + 1	
+					acessorios()
+				}
 		   	pare
 
 		   	caso 5: 
-		   		limpa()
-		   		escreva("\nVocê adicionou: ", nomeAcessorios[4], " ao carrinho")
-		   		somaCarrinho = somaCarrinho + 1
+		   		teste = verdadeiro
+				limpa()
+				escreva("Você adicionou ", nomeAcessorios[4]," ao carrinho!")
+				escreva("\n")
 				addCarrinho[somaCarrinho] = nomeAcessorios[4]
-		   		acessorios()
+				
+				para(inteiro j = 0; j <= somaCarrinho; j++){
+					se (addCarrinhoExibicao[j] == nomeAcessorios[4]){
+						teste = falso
+						quantidadeItem[j] = quantidadeItem[j] + 1
+						precoAuxiliar[j] = precoAcessorios[4]
+						acessorios()	
+					}
+				}
+				se (teste == verdadeiro){
+					addCarrinhoExibicao[somaCarrinho] = nomeAcessorios[4]
+					para (inteiro i = 0; i <= somaCarrinho; i++){
+						se(addCarrinhoExibicao[i] == nomeAcessorios[4]){
+							quantidadeItem[i] = quantidadeItem[i] + 1
+							precoAuxiliar[i] = precoAcessorios[4]							
+						}
+					}
+					somaCarrinho = somaCarrinho + 1	
+					acessorios()
+				}
 		   	pare
-
 		   	caso 6: 
 		   		limpa()
 				carrinho()
 		   	pare
-
 		   	caso 7: 
 		   		limpa()
 				menuPrincipal()
 			pare
-		   	
-		   }
+
+		   	caso contrario:
+			    limpa()
+			    escreva("Escolha uma opção valida")
+			    acessorios() 
+		}
 	}
 	funcao carrinho(){
 		
@@ -652,6 +755,8 @@ escreva("\n      ***     ***             ***     **  ***        ***             
 escreva("\n      ***********             **********  ***        ***        ***********               ")
 escreva("\n      ***********             *********   ***        ***        ***********               ")
 	}
+
+				
 	
 }
  
@@ -661,7 +766,7 @@ escreva("\n      ***********             *********   ***        ***        *****
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
 
- * @POSICAO-CURSOR = 3191; 
+ * @POSICAO-CURSOR = 17552; 
 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
