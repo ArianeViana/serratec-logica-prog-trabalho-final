@@ -1,16 +1,16 @@
 programa
 {
+	inclua biblioteca Util --> u
+	inclua biblioteca Texto --> t
 	
 	inteiro  opcaoMenuPrincipal
-	cadeia usuario
-	inteiro senha
-
+	cadeia usuario, senha, resposta, resposta2
+	cadeia vetorUsuarios [7] = {"ricardo", "thiago", "ariane", "andrea", "douglas", "vanessa", "admin"}
+	cadeia vetorSenhas [7] = {"123", "t123", "a123", "a234", "d123","v123", "ad123"}
 	inteiro somaCarrinho = 0
 	cadeia addCarrinho[30] 
 	cadeia addCarrinhoExibicao[30] 
-
 	inteiro quantidadeItem[15] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
-	
 	real precoAuxiliar[15]
 	logico teste = verdadeiro
 
@@ -18,65 +18,140 @@ programa
 	funcao inicio()
 	{	
 		// chamar usuario logado
-		logo()
+		
+		entrar()
 		login()
 		menuPrincipal()
 		
 	}
 
-	funcao login(){
-		escreva("-------------------------------------------\n\n\n\n\n\n\n\n\n")
-		escreva("\t»»»»» IDENTIFICAÇÃO «««««\n")
+	funcao entrar(){
+		logo()
+		escreva("\n\n-------------------------------------------\n")
+		escreva("\tDeseja entrar na loja? \n")
 		escreva("-------------------------------------------\n")
-		escreva("Nome de usuário:\n")
-		escreva("(letras minúsculas e sem espaço)\n")
-		leia(usuario)
-		escreva("Senha: \n")
-		leia(senha)
-
-		limpa()	
-		
-
-		se (usuario == "ricardo" e senha == 123) {
-			boasVindas()
-		}
-			senao se (usuario == "thiago" e senha == 234){
-				boasVindas()
+		escreva("\tDigite S para [SIM]\n")
+		escreva("\n")
+		escreva("\tDigite N para [NÃO]\n")
+		leia(resposta2)
+		limpa()
+	
+						
+			se(resposta2 == "s" ou resposta2 == "S"){
+				login()				      				
+				//limpa()	
+				//processo()
+							
 			}
-				senao se (usuario == "ariane" e senha == 345){
-					boasVindas()
-				}
-					senao se (usuario == "douglas" e senha == 456){
-						boasVindas()
-					}
-						senao se (usuario == "andrea" e senha == 567){
-							boasVindas()
-						}
-							senao se (usuario == "vanessa" e senha == 678){
-								boasVindas()
-							}
-								senao se (usuario == "admin" e senha == 789){
-									boasVindas()	
-								}	
-					
-		senao
-		{
-			escreva("-------------------------------------------\n")
-			escreva(" ## usuário ou senha inválidos ##\n")
-			escreva("-------------------------------------------\n")
-			escreva(" Tente Novamente \n")
-			login()	
-		}
+			senao se (resposta2 == "n" ou resposta2 == "N"){
+				escreva("\t###########################\n")
+				escreva("\t# Até logo, volte sempre! #\n")
+				escreva("\t###########################\n")
+				u.aguarde(1500)
+				limpa()
+				entrar()
+			}
+				senao{
+					escreva("-------------------------------------------\n")
+					escreva("\t# Opção inválida #\n")
+					escreva("-------------------------------------------\n")
+					u.aguarde(1500)
+					limpa()
+					login()
+			}
 			
 	}
-	funcao boasVindas(){
+	
+	funcao login()
+	{	
+		
 		escreva("-------------------------------------------\n")
-		escreva("\t Olá ", usuario, ", seja bem-vindo(a)!\n")
+		escreva("\t»»» IDENTIFICAÇÃO «««\n")
 		escreva("-------------------------------------------\n")
-		escreva("\t»»»»» BOAS COMPRAS «««««\n")
-		escreva("-------------------------------------------\n")
-		// chamar função menu
+		escreva("Deseja sair? \n")
+		escreva("Digite [S] para Sim ou [N] para Não. \n")
+		leia(resposta)
+
+			se(resposta == "n" ou resposta == "N"){
+				limpa()
+				escreva("-------------------------------------------\n")
+				escreva("\t»»» IDENTIFICAÇÃO «««\n")
+				escreva("-------------------------------------------\n")
+				escreva("Nome de usuário:\n")
+				leia(usuario)
+				escreva("Senha: \n")
+				leia(senha)
+				processo()
+				
+				
+			}
+			senao se(resposta == "s" ou resposta == "S"){
+				limpa()
+				entrar()
+			}
+			senao{
+				escreva("-------------------------------------------\n")
+				escreva(" # Operação invalida #\n")
+				escreva("-------------------------------------------\n")
+				escreva("\t# Tente Novamente #\n")
+				u.aguarde(1000)									
+				limpa()
+				login()
+				processo()
+			}
+				
 	}
+
+		funcao boasVindas(){
+			limpa()
+			escreva("-------------------------------------------\n")
+			escreva("\t Olá ", t.caixa_alta(usuario), ", seja bem-vindo!\n")
+			escreva("-------------------------------------------\n")
+			escreva("\t»»»»» BOAS COMPRAS «««««\n")
+			escreva("-------------------------------------------\n")
+			
+			//limpa()
+			menuPrincipal()
+	}
+		
+		funcao processo()
+		{
+			se (usuario == vetorUsuarios[0] e senha == vetorSenhas[0]) {
+				boasVindas()
+			}
+				senao se (usuario == vetorUsuarios[1] e senha == vetorSenhas[1]){
+					boasVindas()
+				}
+					senao se (usuario == vetorUsuarios[2] e senha == vetorSenhas[2]){
+						boasVindas()
+					}
+						senao se (usuario == vetorUsuarios[3] e senha == vetorSenhas[3]){
+							boasVindas()
+						}
+							senao se (usuario == vetorUsuarios[4] e senha == vetorSenhas[4]){
+								boasVindas()
+							}
+								senao se (usuario == vetorUsuarios[5] e senha == vetorSenhas[5]){
+									boasVindas()
+								}
+									senao se (usuario == vetorUsuarios[6] e senha == vetorSenhas[6]){
+	       								boasVindas()
+									}	
+						
+				senao
+				{					
+				escreva("-------------------------------------------\n")
+				escreva(" # usuário ou senha inválido #\n")
+				escreva("-------------------------------------------\n")
+				escreva("\t# Tente Novamente #\n")
+				u.aguarde(1000)									
+				limpa()
+				login()
+				//processo()
+				
+				}
+		}
+
 	funcao menuPrincipal(){
 		  escreva("[1] Jogos\n[2] Consoles\n[3] Acessórios\n[4] Voltar Login\n[5] Carrinho\n[6] LogOut ")
 		  escreva("\nEscolha uma opção: ")
@@ -109,7 +184,7 @@ programa
 		  		
 		  }
 		  
-			}
+	}
 	      
 	funcao erroEscolha(){
 			limpa()
@@ -507,7 +582,7 @@ programa
   funcao acessorios ()
 
   {	
-
+	inteiro opcao3
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
 
 
@@ -765,9 +840,7 @@ escreva("\n      ***********             *********   ***        ***        *****
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
-
- * @POSICAO-CURSOR = 17552; 
-
+ * @POSICAO-CURSOR = 579; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
