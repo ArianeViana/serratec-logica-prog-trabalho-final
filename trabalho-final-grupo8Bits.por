@@ -7,6 +7,9 @@ programa
 
 	inteiro somaCarrinho = 0
 	cadeia addCarrinho[30] 
+	cadeia addCarrinhoExibicao[30] 
+	inteiro quantidadeItem[5] = {0,0,0,0,0}
+	real precoJogosAuxiliar[5]
 
 	funcao inicio()
 	{	
@@ -111,11 +114,10 @@ programa
 		
 	}
 	funcao jogos(){
-		
-	inteiro opcao3
+	logico teste = verdadeiro	
+	inteiro opcao1
 	cadeia nomeJogos[5]={"Serratec Adveture","Zepa Conquest","Limpa()","Enquanto infinity","Save the Programmer"}
-	inteiro quantidadeJogos[5]={9, 1, 5, 2, 402
-	}
+	inteiro quantidadeJogos[5]={9, 1, 5, 2, 402}
 	cadeia descricao[5]={"Jogo de aventura","Jogo de ação","Jogo de Quebra-Cabeça","Jogo Infinito","Jogo de Terror"}
 	real precoJogos[5]={199.99, 299.99, 149.99, 69.99, 249.99}
 	cadeia opcaoJogos[5]={"[1]", "[2]", "[3]", "[4]", "[5]"}
@@ -125,58 +127,150 @@ programa
 		}
 	escreva("\n[6]Carrinho\n\n[7]Voltar Menu")
 	escreva("\n\nEscolha sua opção!")
-	leia(opcao3)
+	leia(opcao1)
 
-	escolha(opcao3){
+	escolha(opcao1){
 		caso 1:
+			teste = verdadeiro
 			limpa()
-			escreva("Você Adicionou ", nomeJogos[0]," ao carrinho!")
+			escreva("Voce Adicionou ", nomeJogos[0]," ao carrinho")
 			escreva("\n")
-
-			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[0]
-
-			jogos()
+			
+			para(inteiro j = 0; j <= somaCarrinho; j++){
+				se (addCarrinhoExibicao[j] == nomeJogos[0]){
+					teste = falso
+					quantidadeItem[j] = quantidadeItem[j] + 1
+					precoJogosAuxiliar[j] = precoJogos[0]
+					jogos()	
+				}
+			}
+			se (teste == verdadeiro){
+				addCarrinhoExibicao[somaCarrinho] = nomeJogos[0]
+				para (inteiro i = 0; i <= somaCarrinho; i++){
+					se(addCarrinhoExibicao[i] == nomeJogos[0]){
+						quantidadeItem[i] = quantidadeItem[i] + 1
+						precoJogosAuxiliar[i] = precoJogos[0]
+						
+					}
+				}
+				
+				somaCarrinho = somaCarrinho + 1
+				jogos()
+			}
 		pare
 		caso 2:
+			teste = verdadeiro
 			limpa()
-			escreva("Você Adicionou ", nomeJogos[1]," ao carrinho!")
+			escreva("Voce Adicionou ", nomeJogos[1]," ao carrinho")
 			escreva("\n")
-
-			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[1]
-
-			jogos()
+			
+			para(inteiro j = 0; j <= somaCarrinho; j++){
+				se (addCarrinhoExibicao[j] == nomeJogos[1]){
+					teste = falso
+					quantidadeItem[j] = quantidadeItem[j] + 1
+					precoJogosAuxiliar[j] = precoJogos[1]
+					jogos()	
+				}
+			}
+			se (teste == verdadeiro){
+				addCarrinhoExibicao[somaCarrinho] = nomeJogos[1]
+				para (inteiro i = 0; i <= somaCarrinho; i++){
+					se(addCarrinhoExibicao[i] == nomeJogos[1]){
+						quantidadeItem[i] = quantidadeItem[i] + 1
+						precoJogosAuxiliar[i] = precoJogos[1]
+					}
+				}
+				
+				somaCarrinho = somaCarrinho + 1
+				jogos()
+			}
 		pare
 		caso 3:
+		teste = verdadeiro
 			limpa()
-			escreva("Você Adicionou ", nomeJogos[2]," ao carrinho!")
+			escreva("Voce Adicionou ", nomeJogos[2]," ao carrinho")
 			escreva("\n")
-
-			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[2]
-
-			jogos()
+			
+			para(inteiro j = 0; j <= somaCarrinho; j++){
+				se (addCarrinhoExibicao[j] == nomeJogos[2]){
+					teste = falso
+					quantidadeItem[j] = quantidadeItem[j] + 1
+					precoJogosAuxiliar[j] = precoJogos[2]
+					jogos()	
+				}
+			}
+			se (teste == verdadeiro){
+				addCarrinhoExibicao[somaCarrinho] = nomeJogos[2]
+				para (inteiro i = 0; i <= somaCarrinho; i++){
+					se(addCarrinhoExibicao[i] == nomeJogos[2]){
+						quantidadeItem[i] = quantidadeItem[i] + 1
+						precoJogosAuxiliar[i] = precoJogos[2]
+					}
+				}
+				
+				somaCarrinho = somaCarrinho + 1
+				jogos()
+			}
 		pare
 		caso 4:
+			teste = verdadeiro
 			limpa()
-			escreva("Você Adicionou ", nomeJogos[3]," ao carrinho!")
+			escreva("Voce Adicionou ", nomeJogos[3]," ao carrinho")
 			escreva("\n")
-
-			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[3]
-
-			jogos()
+			
+			para(inteiro j = 0; j <= somaCarrinho; j++){
+				se (addCarrinhoExibicao[j] == nomeJogos[3]){
+					teste = falso
+					quantidadeItem[j] = quantidadeItem[j] + 1
+					precoJogosAuxiliar[j] = precoJogos[3]
+					jogos()	
+				}
+			}
+			se (teste == verdadeiro){
+				addCarrinhoExibicao[somaCarrinho] = nomeJogos[3]
+				para (inteiro i = 0; i <= somaCarrinho; i++){
+					se(addCarrinhoExibicao[i] == nomeJogos[3]){
+						quantidadeItem[i] = quantidadeItem[i] + 1
+						precoJogosAuxiliar[i] = precoJogos[3]
+					}
+				}
+				
+				somaCarrinho = somaCarrinho + 1
+				jogos()
+			}
 		pare
 		caso 5:
+			teste = verdadeiro
 			limpa()
-			escreva("Você Adicionou ", nomeJogos[4]," ao carrinho!")
+			escreva("Voce Adicionou ", nomeJogos[4]," ao carrinho")
 			escreva("\n")
-
-			somaCarrinho = somaCarrinho + 1
 			addCarrinho[somaCarrinho] = nomeJogos[4]
-			jogos()
-		pare
+			
+			para(inteiro j = 0; j <= somaCarrinho; j++){
+				se (addCarrinhoExibicao[j] == nomeJogos[4]){
+					teste = falso
+					quantidadeItem[j] = quantidadeItem[j] + 1
+					precoJogosAuxiliar[j] = precoJogos[4]
+					jogos()	
+				}
+			}
+			se (teste == verdadeiro){
+				addCarrinhoExibicao[somaCarrinho] = nomeJogos[4]
+				
+				para (inteiro i = 0; i <= somaCarrinho; i++){
+					se(addCarrinhoExibicao[i] == nomeJogos[4]){
+						quantidadeItem[i] = quantidadeItem[i] + 1
+						precoJogosAuxiliar[i] = precoJogos[4]
+					}
+				}
+				
+				somaCarrinho = somaCarrinho + 1
+				jogos()
+			}
 		caso 6:
 			limpa()
 			carrinho()
@@ -353,7 +447,12 @@ programa
 
 				
 		para(inteiro i = 0; i <= somaCarrinho; i++){
-			escreva("\n", addCarrinho[i], "\n")
+			escreva("\n\n", addCarrinhoExibicao[i], "\n")
+			se(quantidadeItem[i] > 0){
+				escreva("Quantidade: ", quantidadeItem[i], "\n")
+				escreva("Preço Unitário: ", precoJogosAuxiliar[i])
+			}
+			 
 		}
 
 		
@@ -375,7 +474,7 @@ programa
 			}
 		}
 
-		
+		//teste github
 		
 		
 		
@@ -418,7 +517,7 @@ escreva("\n      ***********             *********   ***        ***        *****
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2577; 
+ * @POSICAO-CURSOR = 12375; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
