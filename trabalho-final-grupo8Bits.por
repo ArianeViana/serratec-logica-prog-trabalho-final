@@ -8,10 +8,12 @@ programa
 	inteiro somaCarrinho = 0
 	cadeia addCarrinho[30] 
 	cadeia addCarrinhoExibicao[30] 
+
 	inteiro quantidadeItem[15] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 	
 	real precoAuxiliar[15]
 	logico teste = verdadeiro
+
 
 	funcao inicio()
 	{	
@@ -116,6 +118,7 @@ programa
 		
 	}
 	funcao jogos(){
+
 		
 	inteiro opcao1
 	cadeia nomeJogos[5]={"Serratec Adveture","Zepa Conquest","Limpa()","Enquanto infinity","Save the Programmer"}
@@ -135,7 +138,9 @@ programa
 		caso 1:
 			teste = verdadeiro
 			limpa()
+
 			escreva("Você adicionou ", nomeJogos[0]," ao carrinho!")
+
 			escreva("\n")
 			addCarrinho[somaCarrinho] = nomeJogos[0]
 			
@@ -143,7 +148,9 @@ programa
 				se (addCarrinhoExibicao[j] == nomeJogos[0]){
 					teste = falso
 					quantidadeItem[j] = quantidadeItem[j] + 1
+
 					precoAuxiliar[j] = precoJogos[0]
+
 					jogos()	
 				}
 			}
@@ -152,7 +159,9 @@ programa
 				para (inteiro i = 0; i <= somaCarrinho; i++){
 					se(addCarrinhoExibicao[i] == nomeJogos[0]){
 						quantidadeItem[i] = quantidadeItem[i] + 1
+
 						precoAuxiliar[i] = precoJogos[0]
+
 						
 					}
 				}
@@ -164,7 +173,9 @@ programa
 		caso 2:
 			teste = verdadeiro
 			limpa()
+
 			escreva("Você adicionou ", nomeJogos[1]," ao carrinho!")
+
 			escreva("\n")
 			addCarrinho[somaCarrinho] = nomeJogos[1]
 			
@@ -172,7 +183,9 @@ programa
 				se (addCarrinhoExibicao[j] == nomeJogos[1]){
 					teste = falso
 					quantidadeItem[j] = quantidadeItem[j] + 1
+
 					precoAuxiliar[j] = precoJogos[1]
+
 					jogos()	
 				}
 			}
@@ -181,7 +194,9 @@ programa
 				para (inteiro i = 0; i <= somaCarrinho; i++){
 					se(addCarrinhoExibicao[i] == nomeJogos[1]){
 						quantidadeItem[i] = quantidadeItem[i] + 1
+
 						precoAuxiliar[i] = precoJogos[1]
+
 					}
 				}
 				
@@ -192,7 +207,9 @@ programa
 		caso 3:
 		teste = verdadeiro
 			limpa()
+
 			escreva("Você adicionou ", nomeJogos[2]," ao carrinho!")
+
 			escreva("\n")
 			addCarrinho[somaCarrinho] = nomeJogos[2]
 			
@@ -200,7 +217,9 @@ programa
 				se (addCarrinhoExibicao[j] == nomeJogos[2]){
 					teste = falso
 					quantidadeItem[j] = quantidadeItem[j] + 1
+
 					precoAuxiliar[j] = precoJogos[2]
+
 					jogos()	
 				}
 			}
@@ -209,7 +228,9 @@ programa
 				para (inteiro i = 0; i <= somaCarrinho; i++){
 					se(addCarrinhoExibicao[i] == nomeJogos[2]){
 						quantidadeItem[i] = quantidadeItem[i] + 1
+
 						precoAuxiliar[i] = precoJogos[2]
+
 					}
 				}
 				
@@ -220,7 +241,9 @@ programa
 		caso 4:
 			teste = verdadeiro
 			limpa()
+
 			escreva("Você adicionou ", nomeJogos[3]," ao carrinho!")
+
 			escreva("\n")
 			addCarrinho[somaCarrinho] = nomeJogos[3]
 			
@@ -228,7 +251,9 @@ programa
 				se (addCarrinhoExibicao[j] == nomeJogos[3]){
 					teste = falso
 					quantidadeItem[j] = quantidadeItem[j] + 1
+
 					precoAuxiliar[j] = precoJogos[3]
+
 					jogos()	
 				}
 			}
@@ -237,7 +262,9 @@ programa
 				para (inteiro i = 0; i <= somaCarrinho; i++){
 					se(addCarrinhoExibicao[i] == nomeJogos[3]){
 						quantidadeItem[i] = quantidadeItem[i] + 1
+
 						precoAuxiliar[i] = precoJogos[3]
+
 					}
 				}
 				
@@ -248,7 +275,9 @@ programa
 		caso 5:
 			teste = verdadeiro
 			limpa()
+
 			escreva("Você adicionou ", nomeJogos[4]," ao carrinho!")
+
 			escreva("\n")
 			addCarrinho[somaCarrinho] = nomeJogos[4]
 			
@@ -256,7 +285,9 @@ programa
 				se (addCarrinhoExibicao[j] == nomeJogos[4]){
 					teste = falso
 					quantidadeItem[j] = quantidadeItem[j] + 1
+
 					precoAuxiliar[j] = precoJogos[4]
+
 					jogos()	
 				}
 			}
@@ -266,7 +297,9 @@ programa
 				para (inteiro i = 0; i <= somaCarrinho; i++){
 					se(addCarrinhoExibicao[i] == nomeJogos[4]){
 						quantidadeItem[i] = quantidadeItem[i] + 1
+
 						precoAuxiliar[i] = precoJogos[4]
+
 					}
 				}
 				
@@ -281,11 +314,13 @@ programa
 			limpa()
 			menuPrincipal()
 
+
 		caso contrario: 
 			limpa()
 			escreva("Coloque uma opção válida\n")
 			jogos()
 			
+
 		}
 	}
 	funcao consoles(){
@@ -304,6 +339,7 @@ programa
 		leia(opcao2)
 
 		escolha(opcao2){
+
 		caso 1:
 			teste = verdadeiro
 			limpa()
@@ -330,6 +366,7 @@ programa
 				}
 				
 				somaCarrinho = somaCarrinho + 1
+
 				consoles()
 			}
 		pare
@@ -357,6 +394,7 @@ programa
 					}
 				}
 				
+
 				somaCarrinho = somaCarrinho + 1
 				consoles()
 			}
@@ -443,6 +481,7 @@ programa
 				}
 				
 				somaCarrinho = somaCarrinho + 1
+
 				consoles()
 			}
 			caso 6:
@@ -459,12 +498,16 @@ programa
 				escreva("Coloque uma opção válida\n")
 				consoles()
 				
+
 		}
+
 	}
 
 
   funcao acessorios ()
+
   {	
+
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
      inteiro opcao
 
@@ -548,7 +591,9 @@ programa
 			escreva("\n\n", addCarrinhoExibicao[i], "\n")
 			se(quantidadeItem[i] > 0){
 				escreva("Quantidade: ", quantidadeItem[i], "\n")
+
 				escreva("Preço Unitário: ", precoAuxiliar[i])
+
 			}
 			 
 		}
@@ -615,7 +660,9 @@ escreva("\n      ***********             *********   ***        ***        *****
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 3191; 
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
