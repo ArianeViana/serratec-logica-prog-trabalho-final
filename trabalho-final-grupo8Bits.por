@@ -509,14 +509,16 @@ programa
   {	
 
      cadeia numero[5]= {"[1]", "[2]", "[3]", "[4]", "[5]"}
-     inteiro opcao3
+
 
 	cadeia nomeAcessorios[5]= {"Controle sem fio paçoquinha++","Teclado de jogos variáveis infinitas", "Progdragão", "Mouse Gamer limpa +rápido", "Livro * No final tudo da certo *"}
 
 	cadeia descricao[5]= {"Aumente seu nível de motivação e agilidade na hora de enfrentar novos desafios.", "Eleve o nível do seu desempenho de jogo.", "Bonequinho para deixar o seu cantinho ainda mais bonito.", "O mouse mais desejado dos alunos de programação.","Dicas de como commitar no seu repositório de GitHub sem surtar"}
+
 	inteiro Qtd[5] = {30, 12, 20, 15, 25}
 	real precoAcessorios[5]= {199.99 , 299.99 , 149.99, 99.99, 69.99}
 	
+
 	para (inteiro k=0; k<5; k++) {
 
 			escreva("\n",numero[k], " ", nomeAcessorios[k],": ", precoAcessorios[k],"R$", "\n" ,descricao[k],"\n", "estoque ", Qtd[k],"\n")
@@ -753,6 +755,8 @@ escreva("\n      ***     ***             ***     **  ***        ***             
 escreva("\n      ***********             **********  ***        ***        ***********               ")
 escreva("\n      ***********             *********   ***        ***        ***********               ")
 	}
+
+				
 	
 }
  
@@ -761,7 +765,9 @@ escreva("\n      ***********             *********   ***        ***        *****
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 17552; 
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
